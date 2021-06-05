@@ -11,13 +11,13 @@ const getters = {
 const actions = {
     async getModel({ commit }, model) {
         const { data } = await ModelService.get(model);
-        commit('SET_MAKE', data);
+        commit('SET_MODEL', data);
         return data;
     },
 }
 
 const mutations = {
-    SET_MAKE(state, model) {
+    SET_MODEL(state, model) {
         state.model = model
     },
 }

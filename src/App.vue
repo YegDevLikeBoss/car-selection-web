@@ -3,6 +3,9 @@
   <section class="section">
     <router-view />
   </section>
+  <div
+    style="width: 100%; height: 400px; background-color: rgb(26, 25, 25)"
+  ></div>
 </template>
 
 <script>
@@ -12,6 +15,9 @@ export default {
   name: "app",
   components: {
     TheHeader,
+  },
+  created() {
+    document.title = "Автоподбор";
   },
 };
 </script>
@@ -55,7 +61,8 @@ ul {
 
 <style scoped>
 .section {
-  min-height: 100%;
-  background-color: rgb(58, 58, 58);
+  margin-top: 43px;
+  padding-top: 1px;
+  background-color: rgb(26, 25, 25);
 }
 </style>

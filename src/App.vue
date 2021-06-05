@@ -1,10 +1,21 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view />
+  <TheHeader />
+  <section class="section">
+    <router-view />
+  </section>
 </template>
+
+<script>
+import TheHeader from "./components/TheHeader.vue";
+
+export default {
+  name: "app",
+  components: {
+    TheHeader,
+  },
+};
+</script>
+
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Kelly+Slab&family=Roboto&family=Spectral:wght@700&display=swap");
@@ -39,5 +50,12 @@ ul {
 }
 .text-cursive {
   font-family: "Kelly Slab", cursive;
+}
+</style>
+
+<style scoped>
+.section {
+  min-height: 100%;
+  background-color: rgb(58, 58, 58);
 }
 </style>

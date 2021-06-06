@@ -4,6 +4,7 @@
       <img class="car-image" :src="model.image_url" :alt="model.model" />
       <h2 class="model-name">{{ model.model }}</h2>
     </div>
+    <h2 class="model-name margin-15">Похожие модели</h2>
     <div class="car-info hidden">
       <model-card v-for="car in model.recommended" :model="car"></model-card>
     </div>
@@ -25,6 +26,11 @@ export default {
   },
   mounted() {
     this.$store.dispatch("getModel", this.$route.params.id);
+  },
+  watch: {
+    $route(to, from) {
+      this.$store.dispatch("getModel", to.params.id);
+    },
   },
 };
 </script>
@@ -50,5 +56,9 @@ export default {
 .model-name {
   color: white;
   font-size: 30px;
+}
+
+.margin-15 {
+  margin-left: 15px;
 }
 </style>
